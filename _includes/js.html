@@ -1,0 +1,17 @@
+
+        <script>
+            // Adds class of js to the html tag if JS is enabled
+            document.getElementsByTagName('html')[0].className += ' js';
+
+            (function (document, undefined) {
+                // Pattern selector
+                document.getElementById('xx-select__submit').style.display = 'none';
+                document.getElementById('xx-select__options').onchange = function() {
+                    //document.location=this.options[this.selectedIndex].value;
+                    var val = this.value;
+                    if (val !== "") {
+                        window.location = val;
+                    }
+                }
+            })(document);
+        </script>

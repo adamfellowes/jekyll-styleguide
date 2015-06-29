@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include head.html %}
+    </head>
+    <body class="xx-pattern">
+        <a href="{{ site.baseurl }}/patterns/" title="A helpful back button!" class="xx-btn xx-btn--back">Back to library</a>
+        <div class="xx-markdown-body">
+            <h1>{{ page.title }}</h1>
+            {{ content }}
+        </div>
+        <a href="{{ site.baseurl }}/patterns/" title="A helpful back button!" class="xx-btn xx-btn--back">Back to library</a>
+    </body>
+</html>

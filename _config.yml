@@ -1,0 +1,26 @@
+# Site settings
+title: Company name
+email: contact@ischagast.nl
+description: Styleguide boilerplate with Jekyll
+baseurl: ""
+url: "http://ischagast.nl/styleguide" # the base hostname & protocol for your site
+twitter_username: ischagast
+github_username:  ischagast
+
+# Collections
+collections:
+  patterns:
+    output: true
+    permalink: patterns/:path/
+
+# Front Matter Defaults
+
+# General settings
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: pretty
+sass:
+  sass_dir: /static/_scss
+  style: :compressed

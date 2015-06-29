@@ -1,0 +1,341 @@
+---
+---
+// **************************************************
+//
+//  styleguide.scss
+//
+// **************************************************
+
+
+// --------------------------------------------------
+// import the project scss file
+// --------------------------------------------------
+@import 'style';
+
+
+
+
+// --------------------------------------------------
+// All styleguide specific styling
+// --------------------------------------------------
+
+// Styleguide settings
+// --------------------------------------------------
+$margin: 1rem;
+
+
+// Page specific styling
+// --------------------------------------------------
+.xx-home {
+    background: #000;
+    color: #FFF;
+}
+.xx-pattern {
+    padding: 1rem;
+}
+
+// General
+// --------------------------------------------------
+.xx-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: auto;
+}
+
+// Buttons
+// --------------------------------------------------
+.xx-btn {
+    background: #000;
+    border-radius: 3px;
+    border: 1px solid #000;
+    color: #FFF;
+    color: #fff;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1;
+    margin: 1rem 0;
+    padding: .5rem .75rem;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+    &:hover,
+    &:focus {
+        background: #FFF;
+        color: #000;
+    }
+}
+.xx-btn--rev {
+    background: #FFF;
+    color: #000;
+    &:hover,
+    &:focus {
+        background: #000;
+        border-color: #FFF;
+        color: #fff;
+    }
+}
+.xx-btn--large {
+    font-size: 1.5rem;
+    padding: 1rem 1.25rem;
+}
+
+// Header
+// --------------------------------------------------
+.xx-header {
+    background: #000;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 1;
+}
+    .xx-brand {
+        color: #FFF;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+// Hero
+// --------------------------------------------------
+.xx-hero {
+    padding: 2rem 0;
+}
+    .xx-hero__h {
+        font-size: 3.75rem;
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+    .xx-hero__bd {
+        font-size: 1.5rem;
+    }
+
+// Footer
+// --------------------------------------------------
+.xx-select {
+    background: rgba(0, 0, 0, .8);
+    border-radius: 0 .25rem 0 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 1.5rem;
+    position: fixed;
+    z-index: 999;
+}
+@media screen and (min-width: 60rem) {
+    .xx-select {
+        border-radius: .25rem 0 0 0;
+        left: auto;
+        right: 0;
+    }
+}
+
+
+// Footer
+// --------------------------------------------------
+.xx-footer {
+    border-top: 1px solid #eee;
+    color: #7a7a7a;
+    margin-top: 2rem;
+    padding: 2rem 0 4rem;
+}
+@media screen and (min-width: 60rem) {
+    .xx-footer {
+        padding-bottom: 1.25rem;
+    }
+}
+
+// Example code
+// --------------------------------------------------
+.xx-example {
+    border-radius: .25rem .25rem 0 0;
+    border: 1px solid #e5e5e5;
+    line-height: 1.4;
+    padding: 1rem;
+    position: relative;
+}
+.xx-highlight {
+    border-radius: 0 0 .25rem .25rem;
+    border: 1px solid #e5e5e5;
+    margin-top: -1px;
+}
+
+// Color swatches
+// --------------------------------------------------
+.xx-swatches {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+    .xx-swatch {
+        background-color: #fff;
+        border-radius: 3px;
+        display: inline-block;
+        font-size: 0.8em;
+        height: 14em;
+        line-height: 1.2em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+        overflow: hidden;
+        position: relative;
+        width: 15em;
+    }
+        .xx-swatch__details {
+            padding: 0.7em 0 0;
+            display: block;
+            background-color: white;
+            color: #999;
+        }
+            .xx-swatch__title {
+                display: block;
+            }
+        .xx-swatch__preview {
+            height: 5em;
+            display: block;
+            border-radius: 3px 3px 0 0;
+            padding: 0;
+            font-size: 2em;
+            text-align: center;
+            line-height: 1.1;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+
+// Code sample colors
+// --------------------------------------------------
+.xx-highlight {
+    margin-bottom: $margin;
+
+    // Inline code snippets
+    code,
+    tt {
+        background-color: rgba(0,0,0,0.04);
+        font-size: 85%;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 0.2em;
+        padding-top: 0.2em;
+        border-radius: 3px; // don't add padding, gives scrollbars
+        &:before,
+        &:after {
+            content: "\00a0";
+            letter-spacing: -0.2em; // this creates padding
+        }
+
+        br {
+            display: none;
+        }
+    }
+
+    del code {
+        text-decoration: inherit;
+    }
+
+    // Code tags within code blocks (<pre>s)
+    pre > code {
+        background: transparent;
+        border: 0;
+        font-size: 100%;
+        margin: 0;
+        padding: 0;
+        white-space: pre;
+        word-break: normal;
+    }
+    pre {
+        background-color: #f7f7f7;
+        border-radius: 3px;
+        font-size: 85%;
+        line-height: 1.45;
+        margin: 0;
+        overflow: auto;
+        padding: $margin;
+        word-break: normal;
+        word-wrap: normal;
+    }
+    pre code,
+    pre tt {
+        background-color: transparent;
+        border: 0;
+        display: inline;
+        line-height: inherit;
+        margin: 0;
+        max-width: initial;
+        overflow: initial;
+        padding: 0;
+        word-wrap: normal;
+
+        &:before,
+        &:after {
+            content: normal;
+        }
+    }
+}
+
+// Syntax highlighting styles
+// --------------------------------------------------
+.xx-highlight .hll { background-color: #ffc; }
+.xx-highlight .c { color: #999; } /* Comment */
+.xx-highlight .err { color: #a00; background-color: #faa } /* Error */
+.xx-highlight .k { color: #069; } /* Keyword */
+.xx-highlight .o { color: #555 } /* Operator */
+.xx-highlight .cm { color: #09f; font-style: italic } /* Comment.Multiline */
+.xx-highlight .cp { color: #099 } /* Comment.Preproc */
+.xx-highlight .c1 { color: #999; } /* Comment.Single */
+.xx-highlight .cs { color: #999; } /* Comment.Special */
+.xx-highlight .gd { background-color: #fcc; border: 1px solid #c00 } /* Generic.Deleted */
+.xx-highlight .ge { font-style: italic } /* Generic.Emph */
+.xx-highlight .gr { color: #f00 } /* Generic.Error */
+.xx-highlight .gh { color: #030; } /* Generic.Heading */
+.xx-highlight .gi { background-color: #cfc; border: 1px solid #0c0 } /* Generic.Inserted */
+.xx-highlight .go { color: #aaa } /* Generic.Output */
+.xx-highlight .gp { color: #009; } /* Generic.Prompt */
+.xx-highlight .gs { } /* Generic.Strong */
+.xx-highlight .gu { color: #030; } /* Generic.Subheading */
+.xx-highlight .gt { color: #9c6 } /* Generic.Traceback */
+.xx-highlight .kc { color: #069; } /* Keyword.Constant */
+.xx-highlight .kd { color: #069; } /* Keyword.Declaration */
+.xx-highlight .kn { color: #069; } /* Keyword.Namespace */
+.xx-highlight .kp { color: #069 } /* Keyword.Pseudo */
+.xx-highlight .kr { color: #069; } /* Keyword.Reserved */
+.xx-highlight .kt { color: #078; } /* Keyword.Type */
+.xx-highlight .m { color: #f60 } /* Literal.Number */
+.xx-highlight .s { color: #d44950 } /* Literal.String */
+.xx-highlight .na { color: #4f9fcf } /* Name.Attribute */
+.xx-highlight .nb { color: #366 } /* Name.Builtin */
+.xx-highlight .nc { color: #0a8; } /* Name.Class */
+.xx-highlight .no { color: #360 } /* Name.Constant */
+.xx-highlight .nd { color: #99f } /* Name.Decorator */
+.xx-highlight .ni { color: #999; } /* Name.Entity */
+.xx-highlight .ne { color: #c00; } /* Name.Exception */
+.xx-highlight .nf { color: #c0f } /* Name.Function */
+.xx-highlight .nl { color: #99f } /* Name.Label */
+.xx-highlight .nn { color: #0cf; } /* Name.Namespace */
+.xx-highlight .nt { color: #2f6f9f; } /* Name.Tag */
+.xx-highlight .nv { color: #033 } /* Name.Variable */
+.xx-highlight .ow { color: #000; } /* Operator.Word */
+.xx-highlight .w { color: #bbb } /* Text.Whitespace */
+.xx-highlight .mf { color: #f60 } /* Literal.Number.Float */
+.xx-highlight .mh { color: #f60 } /* Literal.Number.Hex */
+.xx-highlight .mi { color: #f60 } /* Literal.Number.Integer */
+.xx-highlight .mo { color: #f60 } /* Literal.Number.Oct */
+.xx-highlight .sb { color: #c30 } /* Literal.String.Backtick */
+.xx-highlight .sc { color: #c30 } /* Literal.String.Char */
+.xx-highlight .sd { color: #c30; font-style: italic } /* Literal.String.Doc */
+.xx-highlight .s2 { color: #c30 } /* Literal.String.Double */
+.xx-highlight .se { color: #c30; } /* Literal.String.Escape */
+.xx-highlight .sh { color: #c30 } /* Literal.String.Heredoc */
+.xx-highlight .si { color: #a00 } /* Literal.String.Interpol */
+.xx-highlight .sx { color: #c30 } /* Literal.String.Other */
+.xx-highlight .sr { color: #3aa } /* Literal.String.Regex */
+.xx-highlight .s1 { color: #c30 } /* Literal.String.Single */
+.xx-highlight .ss { color: #fc3 } /* Literal.String.Symbol */
+.xx-highlight .bp { color: #366 } /* Name.Builtin.Pseudo */
+.xx-highlight .vc { color: #033 } /* Name.Variable.Class */
+.xx-highlight .vg { color: #033 } /* Name.Variable.Global */
+.xx-highlight .vi { color: #033 } /* Name.Variable.Instance */
+.xx-highlight .il { color: #f60 } /* Literal.Number.Integer.Long */
+
+.css .o,
+.css .o + .nt,
+.css .nt + .nt { color: #999; }

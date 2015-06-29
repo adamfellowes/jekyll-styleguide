@@ -1,0 +1,60 @@
+---
+layout: page
+---
+
+<div class="xx-select">
+    <form action="" method="post" class="xx-select__form">
+        <select name="section" class="xx-select__options" id="xx-select__options">
+            <option value="">Jump to&#8230;</option>
+            {% assign entries = site.patterns | sort: 'weight' %}
+            {% for entry in entries %}
+            <option value="#{{ entry.title }}">&nbsp;&nbsp;&nbsp;&nbsp;{{ entry.title }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="xx-select__submit" id="xx-select__submit">Go</button>
+    </form>
+</div><!-- /xx-select -->
+
+{% assign entries = site.patterns | sort: 'weight' %}
+{% for entry in entries %}
+    <section>
+    <h1 id="{{ entry.title }}">{{ entry.title }} <small><a href="{{ site.baseurl }}{{ entry.url }}" title="Show &quot;{{ entry.title }} pattern&quot; full width">#</a></small></h1>
+    {% include pattern.html %}
+    </section>
+{% endfor %}
+
+
+
+
+{% comment %}
+
+If you want to make sure your types are grouped (file names are not enough), you could use this group_by loop instead
+
+{% assign componentsByType = site.patterns | group_by:"type" %}
+{% for type in componentsByType %}
+    <h3 class="xx-h2">{{ type.name | capitalize }}</h3>
+    {% for entry in type.items %}
+        {% include pattern.html %}
+    {% endfor %}
+{% endfor %}
+
+{% endcomment %}
+
+
+
+
+{% comment %}
+
+If you want to use pages and/or posts to create a more comple styleguide with pages / intros for every type of components, you can use these where loops on those pages / posts instead
+
+{% assign entries = site.patterns | where:"type","buttons" %}
+{% for entry in entries %}
+    {% include pattern.html %}
+{% endfor %}
+
+{% assign entries = site.patterns | where:"type","typography" %}
+{% for entry in entries %}
+    {% include pattern.html %}
+{% endfor %}
+
+{% endcomment %}
