@@ -15,7 +15,7 @@ layout: page
     </form>
 </div><!-- /xx-select -->
 
-{% assign entries = site.patterns | sort: 'weight' %}
+{% assign entries = site.patterns | sort:"name" %}
 {% for entry in entries %}
     <section>
     <h1 id="{{ entry.title }}">{{ entry.title }} <small><a href="{{ site.baseurl }}{{ entry.url }}" title="Show &quot;{{ entry.title }} pattern&quot; full width">#</a></small></h1>
